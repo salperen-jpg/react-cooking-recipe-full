@@ -379,10 +379,7 @@ Food
   margin: 0 auto;
   text-align: left;
 }
-.food img {
-  border-radius: var(--mainBorderRadius);
-  /* max-height: 100%; */
-}
+
 .food p {
   font-weight: bold;
   text-transform: capitalize;
@@ -398,6 +395,11 @@ Food
 }
 .food-info {
   padding-top: 2rem;
+}
+.food img {
+  max-height: 25rem;
+  object-fit: cover;
+  border-radius: var(--mainBorderRadius);
 }
 .rating-icon {
   color: rgb(241, 241, 24);
