@@ -1,0 +1,51 @@
+import React, { useEffect } from 'react';
+import { useGlobalContext } from '../context';
+
+const SearchForm = () => {
+  const { setSearchTerm } = useGlobalContext();
+  const searchValue = React.useRef();
+
+  // useEffect(() => {
+  //   searchValue.current.focus();
+  // }, []);
+
+  const searchRecipe = () => {
+    setSearchTerm(searchValue.current.value);
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+  };
+
+  return (
+    <section className='section search'>
+      <form className='search-form' onSubmit={submitHandler}>
+        <div className='form-control'>
+          {/* <label htmlFor='name'>Search your fav recipe...</label>
+          <input
+            type='text'
+            id='name'
+            ref={searchValue}
+            onChange={searchRecipe}
+          /> */}
+          <label htmlFor='name'>Search your fav recipe...</label>
+          <div className='search-container'>
+            <input
+              type='text'
+              ref={searchValue}
+              onChange={searchRecipe}
+              name=''
+              placeholder='recipe...'
+              className='input'
+            />
+            <button type='button' className='button'>
+              <i className='fa fa-search '></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+  );
+};
+
+export default SearchForm;
